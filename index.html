@@ -10,24 +10,38 @@
             padding: 0;
         }
     </style>
+    <script>
+        function resizeIframe() {
+          var iframe = document.getElementById('myIframe');
+          var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+          var iframeBody = iframeDocument.body;
+          
+          // Set the iframe height based on the content
+          iframe.style.height = iframeBody.scrollHeight + 'px';
+        }
+      </script>
+      
 </head>
 <body>
     <nav style="background-color : blueviolet;  height: 40px; padding: 10px ; margin-top: 0px;" >
         
         <div style="display: inline;" >
-         <a href="index.html">  <img src="static/orangesupermarketlogo.png" href ="index.html"  alt="" style="width: 40px ;height: 40px; border-radius: 25px; margin-right: 900px;"></a> 
+         <a href="index.html">  <img src="static/orangesupermarketlogo.png" href ="index.html"  target = "frame"   alt="" style="width: 40px ;height: 40px; border-radius: 25px; margin-right: 900px;"></a> 
 
                     
-            <a style="text-decoration: none; color: whitesmoke; margin-right: 8px;"  href="index.html">Home</a>
-            <a style="text-decoration: none; color:  whitesmoke; margin-right: 8px;"   href="pages/products.html">Products</a> 
-            <a  style="text-decoration: none; color:  whitesmoke; margin-right: 8px;"  href="pages/contact.html">Contact</a>
-            <a style="text-decoration: none; color:  whitesmoke; margin-right: 8px;"   href="pages/about.html">About us </a>  
+            <a style="text-decoration: none; color: whitesmoke; margin-right: 8px;"  target = "frame"  href="pages/home.html">Home</a>
+            <a style="text-decoration: none; color:  whitesmoke; margin-right: 8px;"  target="frame"  href="pages/products.html">Products</a> 
+            <a  style="text-decoration: none; color:  whitesmoke; margin-right: 8px;" target="frame" href="pages/contact.html">Contact</a>
+            <a style="text-decoration: none; color:  whitesmoke; margin-right: 8px;" target="frame" href="pages/about.html">About us </a>  
         </div>
        
 
     </nav>
-    <marquee style="margin: 10px;"> <strong>Welcome to Orange Super Market - Your One-Stop Destination for Quality Groceries and More!</strong></marquee>
-    <img style="width: 100%; height: 500px;"   src="static/banner.jpg" alt="">
+    <iframe src="pages/home.html" id="myIframe" name="frame" width="100%" onload="resizeIframe()"></iframe>
+
+
+
+ 
 </body>
 <footer style="bottom: 0;position: fixed;text-align: center;background-color: blueviolet; width: 100%; height: 30px; padding: 8px;">
     Copyright © 2025 Orange Super Market All Rights Reserved.
